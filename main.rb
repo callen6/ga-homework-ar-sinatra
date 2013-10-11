@@ -10,6 +10,10 @@ set :database, 	{adapter: "postgresql",
 					host: "localhost"}
 
 class Post < ActiveRecord::Base 
+	has_many :comments
+end
+
+class Comment <ActiveRecord::Base
 end
 
 get '/index' do 

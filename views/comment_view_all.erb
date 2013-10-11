@@ -14,13 +14,10 @@
 		<a href="/index/new">logout</a>
 	</span>
 </div>
-
 <div class='row'>
-	<% @posts.each do |post| %>
-	<a href="<%= post["link"] %>"><%= post["title"] %></a>
-	<p><%= post["up_votes"] %>	
-	<%= post["down_votes"] %>
-	<%= post["timestamp"] %></p>
-	<span class='comments'><p><a href="/comments">comments</a></p></span>
-	<% end %>
+<% @comments.each do |comment| %>
+	<p> <%= comment["body"] %>
+		<%= comment["timestamp"] %></p>
+	<span span='comment_descriptors'><p> <%= comment["author"] %> </p></span>
+<% end %>
 </div>

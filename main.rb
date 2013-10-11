@@ -16,6 +16,11 @@ end
 class Comment <ActiveRecord::Base
 end
 
+get '/comments' do
+	@comments = Comment.all
+	erb :comment_view_all
+end
+
 get '/index' do 
 	@posts = Post.all
 	erb :index_posts
@@ -27,7 +32,7 @@ end
 
 post '/index/create' do
 	post = Post.create(link: params[:link],  title: params[:title], body: params[:body])
-	redirect "/index/#{post.id}"
+	redirect "/index"
 end
 
 get '/index/:id' do

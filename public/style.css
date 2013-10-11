@@ -22,7 +22,7 @@ img {
 	width: 1250px;
 	margin-right: 50px;
 	margin-left: 50px;
-	background-color:#faf0e6;
+	background-color:#eee8dc;
 }
 
 .left_nav {
@@ -36,6 +36,15 @@ img {
 	padding-right: 3px;
 }
 
+.comments {
+	font-size: 10px;
+	color: #8b8878;
+}
+
+.comment_descriptors {
+	font-size: 5px;
+	color: #8b8878;
+}
 
 
 /*.full-column {

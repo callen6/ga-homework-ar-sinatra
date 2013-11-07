@@ -17,9 +17,17 @@ class Comment <ActiveRecord::Base
 	belongs_to :post
 end
 
-get '/comments' do
-	@comments = Comment.all
-	erb :comment_view_all
+# get '/comments' do
+# 	@comments = Comment.all
+# 	erb :comment_view_all
+# end
+
+get '/comments.json' do
+	Comment.all.to_json
+end
+
+post '/comments' do 
+	Comment.create(content: params[:content])
 end
 
 get '/index' do 

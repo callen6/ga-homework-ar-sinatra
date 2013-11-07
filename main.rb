@@ -14,6 +14,7 @@ class Post < ActiveRecord::Base
 end
 
 class Comment <ActiveRecord::Base
+	belongs_to :post
 end
 
 get '/comments' do
@@ -31,7 +32,7 @@ get '/index/new' do
 end
 
 post '/index/create' do
-	post = Post.create(link: params[:link],  title: params[:title], body: params[:body])
+	@post = Post.create(link: params[:link],  title: params[:title], body: params[:body])
 	redirect "/index"
 end
 
